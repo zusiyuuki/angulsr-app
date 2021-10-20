@@ -1,16 +1,19 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const config = require('./config/dev')
+const config = require('./config')
 const FakeDb =require('./fake-db')
 const productRoutes = require('./routes/products')
+const path=require('path')
 
 mongoose.connect(config.DB_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(
         ()=>{
-            const fakeDb =new FakeDb()
-            fakeDb.initDb()
+            if(process.env.NODE_ENV !=='production'){
+                const fakeDb =new FakeDb()
+                //fakeDb.initDb()
+            }
         }
 )
 
@@ -18,11 +21,13 @@ mongoose.connect(config.DB_URI,{
 const app =express()
 
 app.use('/api/v1/products',productRoutes)
-
-app.get('/products',function(req,res){
-    res.json({'success':true})
-})
-
+if(process.env.NODE_ENV !=='production'){
+    const appPath=path.join(__dirname,'..','dist','angular-app')
+    app.use(express.static(appPath))
+    app.get("*",function(req,res){
+        res.sendFile(path.resolve(appPath,'index.html'))
+    })
+}
 const PORT = process.env.PORT||'3001'
 
 
