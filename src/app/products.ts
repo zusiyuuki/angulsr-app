@@ -9,7 +9,7 @@ export const products = [
         heding3:'サンプルテキスト3',
         hedingtext1:'Phone XLのサイズは pheneシリーズの中で最も大きいダイナミックな画面',
         hedingtext2:'高画質な４ｋ画質であなたのその手に美しい世界をお見せします',
-        hedingtext3:'あなたの毎日を止めない大容量のバッテリー'
+        hedingtext3:'あなたの毎日を止めない大容量のバッテリーD'
     },
         
     {
