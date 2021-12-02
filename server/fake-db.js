@@ -3,25 +3,7 @@ const Product = require('./model/product')
 class FakeDb {
     constructor(){
         this.products =[
-            {
-                coverimage:'./assets/img/daniel-olahh.jpg',
-                coverimage1:'./assets/img/puperu.jpg',
-                coverimage2:'./assets/img/tikutaku.jpg',
-                coverimage3:'./assets/img/akuma.jpg',
-                name:'物語の音',
-                price:799,
-                description:'物語の世界で眠りに安らぎを',
-                heding1:'サンプルテキスト１',
-                heding2:'サンプルテキスト2',
-                heding3:'サンプルテキスト3',
-                hedingtext1:'Phone XLのサイズは pheneシリーズの中で最も大きいダイナミックな画面',
-                hedingtext2:'高画質な４ｋ画質であなたのその手に美しい世界をお見せします',
-                hedingtext3:'あなたの毎日を止めない大容量のバッテリーD',
-                sound:'./assets/sound/puperu.mp3',
-                sound2:'./assets/sound/tikutaku.mp3',
-                sound3:'./assets/sound/akuma.mp3',
-            },
-                
+            
             {
                 coverimage:'./assets/img/spase.jpg',
                 coverimage1:'./assets/img/spase.jpg',
