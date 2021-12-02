@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema =mongoose.Schema
-
+//音性コンテンツのデータベース部分のデータ型の指定
 const ProductSchema =new Schema({
         coverimage: String,
         coverimage1: String,
@@ -18,6 +18,9 @@ const ProductSchema =new Schema({
         sound:String,
         sound2:String,
         sound3:String,
+        soundtext:String,
+        soundtext2:String,
+        soundtext3:String,
         
 })
 

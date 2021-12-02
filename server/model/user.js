@@ -2,13 +2,15 @@ const mongoose = require('mongoose')
 const Schema =mongoose.Schema
 const bcrypt = require('bcryptjs');
 
-
+//ユーザー登録時の項目のデータ型と制約の設定箇所
 const UserSchema =new Schema({
+       // ユーザー名に関する指定箇所
        username:{
            type:String,
            required:true,
            max:[60,'ユーザー名は60文字までです'],
        },
+       //Eメールに関する指定箇所
        email:{
            type:String,
            required:true,
@@ -16,7 +18,7 @@ const UserSchema =new Schema({
            unique:true,
            max:[60,'Eメールは最大60文字までです'],
        },
-
+       //パスワードに関する指定箇所
        password:{
         type:String,
         required:true,

@@ -7,7 +7,7 @@ function notAuthorized(res){
 }
 
 
-
+//トークンの認証分岐
 exports.authMiddleware = function(req,res,next){
     const token =req.headers.authorization
     if(!token){

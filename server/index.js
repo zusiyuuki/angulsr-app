@@ -6,6 +6,17 @@ const productRoutes = require('./routes/products')
 const userRoutes = require('./routes/users')
 const path=require('path')
 
+/**
+ * 内容:バックエンド側のメインファイル
+ * 
+ * 最終更新:日2021年12月2日
+ * 
+ * 作成者;図師優輝
+ * 
+ *開発コメント:開発時のバックエンド起動は node index.js
+ *
+*/ 
+
 mongoose.connect(config.DB_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -14,7 +25,7 @@ mongoose.connect(config.DB_URI,{
         ()=>{
             if(process.env.NODE_ENV !=='production'){
                 const fakeDb =new FakeDb()
-                fakeDb.initDb()
+                //fakeDb.initDb()
             }
         }
 )
